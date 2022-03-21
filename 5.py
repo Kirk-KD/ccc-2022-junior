@@ -23,16 +23,10 @@ largest = 0
 row = 0
 col = 0
 
-checked = []
-
 while row < N:
     while col < N:
         if N - col <= largest or N - row <= largest:
             break
-
-        if (row, col) in checked:
-            col += 1
-            continue
 
         size = 0
 
@@ -44,8 +38,7 @@ while row < N:
                     col = t_col
 
                 break
-
-            checked.append((row + size, col + size))
+                
             size += 1
         
         if size > largest:
